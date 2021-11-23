@@ -1,5 +1,7 @@
 <?php
 //pegando o diretorio atual que e represetado pelo .
+// o retorno da função dir
+//Um objeto do tipo Directory representando o diretório passado por parâmetro
 $diretorioAtual = dir('.');
 
 //mostrando o caminho do diretorio atual
