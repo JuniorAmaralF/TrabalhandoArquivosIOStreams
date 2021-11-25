@@ -8,7 +8,7 @@ $arquivoCursos = new SplFileObject('cursos.csv');
 while(!$arquivoCursos->eof()){
     $linha = $arquivoCursos->fgetcsv(';');
 
-    echo $linha[0].PHP_EOL;
+    echo utf8_encode($linha[0]).PHP_EOL;
 }
 
 $date = new DateTime();
@@ -20,3 +20,17 @@ echo $date->format('d/m/Y').PHP_EOL;
 
 //pegando o tamanho do arquivo em bytes
 echo $arquivoCursos->getSize().PHP_EOL;
+
+/*
+<?php
+A class SplFileObject implementa algumas interfaces de Iterators 
+do PHP, o que significa que podemos utilizar um objeto deste 
+tipo dentro de um foreach. Então, para ler um arquivo linha a 
+linha com SplFileObject, poderíamos fazer:
+
+$arquivo = new SplFileObject('/caminho/para/arquivo');
+
+foreach ($arquivo as $linha) {
+    echo $linha;
+}
+*/
